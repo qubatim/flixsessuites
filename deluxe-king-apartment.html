@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deluxe King Suite | Flixses Suites KLCC</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@200;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root { --bronze: #cd7f32; --dark-bg: #0a0a0a; --glass: rgba(255, 255, 255, 0.03); --white: #ffffff; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background-color: var(--dark-bg); color: var(--white); font-family: 'Montserrat', sans-serif; }
+
+        /* Navigation */
+        nav { padding: 20px 5%; display: flex; justify-content: space-between; align-items: center; background: #000; position: sticky; top: 0; z-index: 1000; }
+        .logo { font-family: 'Playfair Display', serif; font-size: 20px; color: var(--bronze); text-decoration: none; font-weight: bold; }
+
+        /* Split Layout */
+        .room-wrapper { display: flex; flex-wrap: wrap; min-height: 100vh; }
+        
+        /* Left Side: Sticky Image/Title */
+        .room-visual { 
+            flex: 1; min-width: 50%; height: 90vh; position: sticky; top: 80px;
+            background: url('https://images.unsplash.com/photo-1631049307264-da0ec9d70304?q=80&w=2070') center/cover;
+            display: flex; align-items: flex-end; padding: 50px;
+        }
+        .visual-overlay { background: linear-gradient(transparent, rgba(0,0,0,0.8)); position: absolute; top:0; left:0; width:100%; height:100%; }
+        .room-title-box { position: relative; z-index: 10; }
+        .room-title-box h1 { font-family: 'Playfair Display', serif; font-size: 3.5rem; margin-bottom: 10px; }
+        
+        /* Right Side: Scrollable Details */
+        .room-details { flex: 1; min-width: 50%; padding: 80px 8%; }
+        .spec-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-bottom: 50px; }
+        .spec-item { border-bottom: 1px solid #222; padding-bottom: 15px; }
+        .spec-label { font-size: 10px; color: var(--bronze); text-transform: uppercase; letter-spacing: 2px; display: block; margin-bottom: 5px; }
+        .spec-value { font-size: 16px; font-weight: 600; }
+
+        .description h2 { font-family: 'Playfair Display', serif; font-size: 2rem; margin-bottom: 20px; color: var(--bronze); }
+        .description p { color: #aaa; line-height: 1.8; margin-bottom: 30px; }
+
+        /* Amenities List */
+        .amenity-list { list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-top: 30px; }
+        .amenity-list li { font-size: 13px; color: #eee; display: flex; align-items: center; gap: 10px; }
+        .amenity-list li::before { content: '✓'; color: var(--bronze); font-weight: bold; }
+
+        /* Sticky Booking Bar */
+        .sticky-book { 
+            position: fixed; bottom: 0; width: 100%; background: #111; 
+            padding: 20px 5%; display: flex; justify-content: space-between; align-items: center;
+            border-top: 1px solid var(--bronze); z-index: 2000;
+        }
+        .price-tag { font-family: 'Playfair Display', serif; font-size: 24px; }
+        .btn-reserve { background: var(--bronze); color: white; padding: 15px 40px; text-decoration: none; font-weight: bold; border-radius: 4px; text-transform: uppercase; letter-spacing: 2px; }
+
+        @media (max-width: 1000px) { 
+            .room-visual { position: relative; height: 50vh; min-width: 100%; top: 0; }
+            .room-details { min-width: 100%; }
+        }
+    </style>
+</head>
+<body>
+
+<nav>
+    <a href="index.html" class="logo">FLIXSES SUITES</a>
+    <a href="rooms.html" style="color: white; text-decoration: none; font-size: 12px; letter-spacing: 1px;">← ALL SUITES</a>
+</nav>
+
+<div class="room-wrapper">
+    <div class="room-visual">
+        <div class="visual-overlay"></div>
+        <div class="room-title-box">
+            <div style="color: var(--bronze); letter-spacing: 3px; font-size: 12px; margin-bottom: 10px;">9.1 GUEST RATING</div>
+            <h1>Deluxe King Suite</h1>
+            <p>Elegance and Modernity in the Sky</p>
+        </div>
+    </div>
+
+    <div class="room-details">
+        <div class="spec-grid">
+            <div class="spec-item"><span class="spec-label">Size</span><span class="spec-value">86 SQM / 925 SQFT</span></div>
+            <div class="spec-item"><span class="spec-label">Bed</span><span class="spec-value">Double King (181x210 cm)</span></div>
+            <div class="spec-item"><span class="spec-label">Occupancy</span><span class="spec-value">2 Adults</span></div>
+            <div class="spec-item"><span class="spec-label">View</span><span class="spec-value">City Skyline / KLCC</span></div>
+        </div>
+
+        <div class="description">
+            <h2>The Experience</h2>
+            <p>Our Deluxe King Suite is known for being very elegant and luxurious. The best part of this fancy room is the rooftop pool access, where you can relax and enjoy amazing views of the city while being surrounded by the sky.</p>
+            
+            <p>When you walk into the suite, you will see that it is very elegant and modern. We have specifically designed the walls to be <strong>soundproof</strong>, so it's very quiet and peaceful inside—perfect for business travelers or those seeking a calm sanctuary.</p>
+
+            <h2>Suite Amenities</h2>
+            <ul class="amenity-list">
+                <li>Rooftop Pool & Hot Tub Access</li>
+                <li>Fully Equipped Kitchenette</li>
+                <li>In-Room Washing Machine & Dryer</li>
+                <li>Soundproof Walls</li>
+                <li>Dishwasher & Electric Kettle</li>
+                <li>Flat-Screen TV with Streaming</li>
+                <li>Slippers & Luxury Toiletries</li>
+                <li>Complimentary High-Speed WiFi</li>
+                <li>Laptop-friendly Workspace</li>
+                <li>Safe, Iron & Clothes Rack</li>
+            </ul>
+        </div>
+
+        <div style="margin-top: 60px; padding: 30px; background: var(--glass); border-radius: 10px;">
+            <h4 style="color: var(--bronze); margin-bottom: 10px;">Revenue Manager's Tip</h4>
+            <p style="font-size: 13px; color: #888;">Book directly through our website to secure the "Executive Early Bird" rate and enjoy a complimentary late check-out (subject to availability).</p>
+        </div>
+    </div>
+</div>
+
+<div class="sticky-book">
+    <div class="price-tag">MYR <span style="color: var(--bronze);">---</span> <small style="font-size: 12px; color: #666;">/ NIGHT</small></div>
+    <a href="CLOUD_BEDS_LINK" class="btn-reserve">Reserve Now</a>
+</div>
+
+</body>
+</html>

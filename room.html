@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Executive Collection | Flixses Suites KLCC</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@200;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root { --bronze: #cd7f32; --dark-bg: #0a0a0a; --glass: rgba(255, 255, 255, 0.03); --white: #ffffff; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background-color: var(--dark-bg); color: var(--white); font-family: 'Montserrat', sans-serif; line-height: 1.6; }
+
+        /* Navigation */
+        nav { padding: 25px 8%; display: flex; justify-content: space-between; align-items: center; background: #000; border-bottom: 1px solid #111; }
+        .logo { font-family: 'Playfair Display', serif; font-size: 22px; color: var(--bronze); text-decoration: none; font-weight: bold; letter-spacing: 3px; }
+        .btn-back { color: white; text-decoration: none; font-size: 12px; letter-spacing: 2px; text-transform: uppercase; border-bottom: 1px solid var(--bronze); padding-bottom: 5px; }
+
+        /* Header */
+        .page-header { padding: 80px 8% 40px; text-align: center; }
+        .page-header h1 { font-family: 'Playfair Display', serif; font-size: 3.5rem; margin-bottom: 20px; }
+        .hero-badge { border: 1px solid var(--bronze); padding: 8px 20px; border-radius: 50px; color: var(--bronze); font-size: 11px; letter-spacing: 3px; display: inline-block; margin-bottom: 20px; }
+
+        /* Room Grid */
+        .room-container { padding: 40px 8% 100px; display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 40px; }
+        .room-card { background: var(--glass); border: 1px solid rgba(255,255,255,0.05); border-radius: 12px; overflow: hidden; display: flex; flex-direction: column; transition: 0.4s; }
+        .room-card:hover { border-color: var(--bronze); transform: translateY(-5px); }
+        .room-image { height: 280px; background-color: #1a1a1a; background-size: cover; background-position: center; }
+        
+        .room-content { padding: 30px; flex-grow: 1; }
+        .room-tag { color: var(--bronze); font-size: 11px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 10px; display: block; }
+        .room-content h3 { font-family: 'Playfair Display', serif; font-size: 1.8rem; margin-bottom: 15px; }
+        .room-features { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 25px; border-top: 1px solid #222; padding-top: 20px; }
+        .feature { font-size: 12px; color: #aaa; display: flex; align-items: center; gap: 8px; }
+        
+        .room-footer { display: flex; justify-content: space-between; align-items: center; padding-top: 20px; border-top: 1px solid #222; }
+        .price-info { font-size: 14px; font-weight: 600; }
+        .btn-book { background: var(--bronze); color: white; padding: 12px 25px; text-decoration: none; border-radius: 4px; font-size: 12px; font-weight: bold; text-transform: uppercase; transition: 0.3s; }
+        .btn-book:hover { background: #fff; color: #000; }
+
+        @media (max-width: 600px) { .room-container { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+
+<nav>
+    <a href="index.html" class="logo">FLIXSES SUITES</a>
+    <a href="index.html" class="btn-back">← Back to Home</a>
+</nav>
+
+<header class="page-header">
+    <div class="hero-badge">OUR SUITES</div>
+    <h1>The Executive Collection</h1>
+    <p style="color: #888; max-width: 600px; margin: 0 auto;">Each apartment is nicely decorated and has a comfortable living space, TV, private bathroom, and a small kitchen[cite: 11].</p>
+</header>
+
+<section class="room-container">
+
+    <div class="room-card">
+        <div class="room-image" style="background-image: url('placeholder-2br.jpg');"></div>
+        <div class="room-content">
+            <span class="room-tag">Spacious Living</span>
+            <h3>Executive Two-Bedroom</h3>
+            <div class="room-features">
+                <span class="feature">📐 97 SQM (1044 sqft)</span>
+                <span class="feature">🛀 Private Bathtub</span>
+                <span class="feature">🛏️ Double Bed (181x210)</span>
+                <span class="feature">📶 Free Wifi</span>
+            </div>
+            <p style="font-size: 13px; color: #777; margin-bottom: 20px;">Nicely furnished rooms designed for work or leisure[cite: 16]. Perfect for small families.</p>
+            <div class="room-footer">
+                <div class="price-info">FROM MYR ____</div>
+                <a href="BOOK_LINK" class="btn-book">Book Now</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="room-card">
+        <div class="room-image" style="background-image: url('placeholder-3br.jpg');"></div>
+        <div class="room-content">
+            <span class="room-tag">Ultimate Luxury</span>
+            <h3>Deluxe Three-Bedroom Suite</h3>
+            <div class="room-features">
+                <span class="feature">📐 121 SQM (1302 sqft)</span>
+                <span class="feature">🏊 Rooftop Pool & Hot Tub</span>
+                <span class="feature">🛏️ King Beds (181x210)</span>
+                <span class="feature">🏙️ City View</span>
+            </div>
+            <p style="font-size: 13px; color: #777; margin-bottom: 20px;">A luxurious retreat with a private rooftop paradise and expansive living room.</p>
+            <div class="room-footer">
+                <div class="price-info">FROM MYR ____</div>
+                <a href="BOOK_LINK" class="btn-book">Book Now</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="room-card">
+        <div class="room-image" style="background-image: url('placeholder-king.jpg');"></div>
+        <div class="room-content">
+            <span class="room-tag">Executive Choice</span>
+            <h3>Deluxe King Suite</h3>
+            <div class="room-features">
+                <span class="feature">📐 96 SQM (1033 sqft)</span>
+                <span class="feature">🔇 Soundproof Walls</span>
+                <span class="feature">🛏️ Double Bed (181x210)</span>
+                <span class="feature">🍳 Full Kitchenette</span>
+            </div>
+            <p style="font-size: 13px; color: #777; margin-bottom: 20px;">Score: 9.1/10. Experience ultimate luxury with a quiet, peaceful atmosphere.</p>
+            <div class="room-footer">
+                <div class="price-info">FROM MYR ____</div>
+                <a href="BOOK_LINK" class="btn-book">Book Now</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="room-card">
+        <div class="room-image" style="background-image: url('placeholder-family.jpg');"></div>
+        <div class="room-content">
+            <span class="room-tag">Family Gateway</span>
+            <h3>Deluxe Family Suite</h3>
+            <div class="room-features">
+                <span class="feature">📐 96 SQM (1033 sqft)</span>
+                <span class="feature">🧺 Washer & Dryer</span>
+                <span class="feature">🍽️ Dining Area</span>
+                <span class="feature">🚿 Free Toiletries</span>
+            </div>
+            <p style="font-size: 13px; color: #777; margin-bottom: 20px;">Designed to give families a great experience with a nice table to eat together.</p>
+            <div class="room-footer">
+                <div class="price-info">FROM MYR ____</div>
+                <a href="BOOK_LINK" class="btn-book">Book Now</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="room-card">
+        <div class="room-image" style="background-image: url('placeholder-1br.jpg');"></div>
+        <div class="room-content">
+            <span class="room-tag">Business Elite</span>
+            <h3>Superior One-Bedroom</h3>
+            <div class="room-features">
+                <span class="feature">📐 83 SQM (893 sqft)</span>
+                <span class="feature">🍳 Refrigerator</span>
+                <span class="feature">🛏️ Double (151x180)</span>
+                <span class="feature">📺 Satellite TV</span>
+            </div>
+            <p style="font-size: 13px; color: #777; margin-bottom: 20px;">Comfortable and stylish, providing a calm and relaxing place for work or fun.</p>
+            <div class="room-footer">
+                <div class="price-info">FROM MYR ____</div>
+                <a href="BOOK_LINK" class="btn-book">Book Now</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="room-card">
+        <div class="room-image" style="background-image: url('placeholder-2p1.jpg');"></div>
+        <div class="room-content">
+            <span class="room-tag">Unique Design</span>
+            <h3>Superior 2+1 Suite</h3>
+            <div class="room-features">
+                <span class="feature">📐 13 SQM (140 sqft)</span>
+                <span class="feature">🚭 Non-Smoking</span>
+                <span class="feature">🛏️ Double (151x180)</span>
+                <span class="feature">🪟 All units have windows</span>
+            </div>
+            <p style="font-size: 13px; color: #777; margin-bottom: 20px;">A compact, functional space designed with modern amenities for travelers[cite: 26].</p>
+            <div class="room-footer">
+                <div class="price-info">FROM MYR ____</div>
+                <a href="BOOK_LINK" class="btn-book">Book Now</a>
+            </div>
+        </div>
+    </div>
+
+</section>
+
+</body>
+</html>
