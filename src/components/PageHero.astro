@@ -1,0 +1,37 @@
+---
+interface Props {
+  title: string;
+  subtitle: string;
+  image: string;
+}
+
+const { title, subtitle, image } = Astro.props;
+---
+
+<section
+  class="relative isolate flex min-h-[55vh] flex-col justify-center px-5 py-20 md:px-8"
+>
+  <div class="absolute inset-0 z-0">
+    <img
+      src={image}
+      alt={title}
+      class="h-full w-full object-cover"
+      loading="eager"
+    />
+    <div class="absolute inset-0 bg-primary/45"></div>
+  </div>
+  <div class="relative z-10 mx-auto w-full max-w-[1280px]">
+    <div class="max-w-2xl text-white">
+      <h1
+        class="hero-fade font-display text-5xl leading-tight md:text-6xl lg:text-7xl"
+      >
+        {title}
+      </h1>
+      <p
+        class="hero-fade hero-fade-delay mt-6 max-w-xl text-white/90 md:text-md"
+      >
+        {subtitle}
+      </p>
+    </div>
+  </div>
+</section>

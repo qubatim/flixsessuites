@@ -1,0 +1,103 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import PageHero from "../components/PageHero.astro";
+import { baseJsonLd, breadcrumbJsonLd } from "../lib/seo";
+
+const images = [
+  "01.jpg",
+  "02.jpg",
+  "IMG_6328.jpg",
+  "IMG_6342.jpg",
+  "Flixesuite-112.jpg",
+  "Platinium-142.jpg",
+];
+const jsonLd = [
+  ...baseJsonLd,
+  breadcrumbJsonLd([
+    { name: "Home", url: "https://flixsessuites.com/" },
+    { name: "Gallery", url: "https://flixsessuites.com/gallery" },
+  ]),
+];
+---
+
+<BaseLayout
+  title="Gallery | Flixes Suites"
+  description="Preview interiors, views, and signature spaces from Flixes Suites in Kuala Lumpur."
+  path="/gallery"
+  jsonLd={jsonLd}
+>
+  <Header />
+  <main>
+    <PageHero
+      title="A glimpse of your stay"
+      subtitle="Explore our curated interiors, amenities, and skyline views."
+      image="/images/02.jpg"
+    />
+    <section class="mx-auto max-w-[1280px] px-5 py-24 md:px-8">
+      <div class="grid grid-cols-2 gap-6 md:grid-cols-3">
+        {
+          images.map((img) => (
+            <button
+              class="reveal overflow-hidden rounded-[8px] border border-border bg-border js-gallery-item transition-shadow hover:shadow-soft"
+              data-image={`/images/${img}`}
+            >
+              <img
+                src={`/images/${img}`}
+                alt="Flixses Suites gallery"
+                class="aspect-[4/3] w-full object-cover transition duration-700 hover:scale-105"
+                loading="lazy"
+              />
+            </button>
+          ))
+        }
+      </div>
+    </section>
+    <div
+      id="lightbox"
+      class="fixed inset-0 z-[60] hidden items-center justify-center bg-primary/90 p-5 backdrop-blur-sm"
+    >
+      <div
+        class="relative max-h-[90vh] w-full max-w-5xl overflow-hidden rounded-md bg-background shadow-2xl border border-white/10"
+      >
+        <button
+          id="closeLightbox"
+          class="absolute right-4 top-4 rounded-full bg-primary/50 px-4 py-2 text-sm font-medium tracking-wide text-white transition hover:bg-accent focus:outline-none"
+          >Close</button
+        >
+        <img
+          id="lightboxImage"
+          src=""
+          alt="Gallery preview"
+          class="max-h-[85vh] w-full object-contain"
+        />
+      </div>
+    </div>
+  </main>
+  <Footer />
+  <script>
+    const lightbox = document.getElementById("lightbox");
+    const lightboxImage = document.getElementById("lightboxImage");
+    document.querySelectorAll(".js-gallery-item").forEach((item) => {
+      item.addEventListener("click", () => {
+        const src = item.getAttribute("data-image");
+        if (src && lightbox && lightboxImage) {
+          lightboxImage.setAttribute("src", src);
+          lightbox.classList.remove("hidden");
+          lightbox.classList.add("flex");
+        }
+      });
+    });
+    document.getElementById("closeLightbox")?.addEventListener("click", () => {
+      lightbox?.classList.add("hidden");
+      lightbox?.classList.remove("flex");
+    });
+    lightbox?.addEventListener("click", (e) => {
+      if (e.target === lightbox) {
+        lightbox.classList.add("hidden");
+        lightbox.classList.remove("flex");
+      }
+    });
+  </script>
+</BaseLayout>

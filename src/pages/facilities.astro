@@ -1,0 +1,113 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import PageHero from "../components/PageHero.astro";
+import { baseJsonLd, breadcrumbJsonLd } from "../lib/seo";
+
+const jsonLd = [
+  ...baseJsonLd,
+  breadcrumbJsonLd([
+    { name: "Home", url: "https://flixsessuites.com/" },
+    { name: "Facilities", url: "https://flixsessuites.com/facilities" },
+  ]),
+];
+---
+
+<BaseLayout
+  title="Facilities | Flixes Suites"
+  description="Explore in-room and property-wide facilities including fitness center, rooftop pool, and premium guest amenities."
+  path="/facilities"
+  jsonLd={jsonLd}
+>
+  <Header />
+  <main>
+    <PageHero
+      title="Thoughtful amenities"
+      subtitle="Everything you need for a comfortable, elevated city stay."
+      image="/images/IMG_6342.jpg"
+    />
+    <section class="mx-auto max-w-[1280px] px-5 py-24 md:px-8">
+      <div class="grid gap-12 lg:grid-cols-2">
+        <div
+          class="reveal rounded-md border border-border bg-background p-10 shadow-sm transition hover:shadow-soft"
+        >
+          <p class="text-xs uppercase tracking-[0.3em] text-accent">
+            In-Room Facilities
+          </p>
+          <h2 class="mt-4 font-bold font-display text-primary text-4xl">
+            Comfort & convenience
+          </h2>
+          <ul class="mt-8 grid grid-cols-1 gap-4 text-sm sm:grid-cols-2">
+            <li class="flex items-center gap-2">
+              <span class="h-1 w-1 rounded-full bg-accent"></span> Washing machine
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="h-1 w-1 rounded-full bg-accent"></span> Iron
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="h-1 w-1 rounded-full bg-accent"></span> Refrigerator
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="h-1 w-1 rounded-full bg-accent"></span> Complimentary Wi-Fi
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="h-1 w-1 rounded-full bg-accent"></span> Hair dryer
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="h-1 w-1 rounded-full bg-accent"></span> Housekeeping
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="h-1 w-1 rounded-full bg-accent"></span> Air conditioning
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="h-1 w-1 rounded-full bg-accent"></span> Heating
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="h-1 w-1 rounded-full bg-accent"></span> Electric kettle
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="h-1 w-1 rounded-full bg-accent"></span> Satellite flat-screen
+              TV
+            </li>
+          </ul>
+        </div>
+        <div
+          class="reveal rounded-md border border-border bg-background p-10 shadow-sm transition hover:shadow-soft"
+        >
+          <p class="text-xs uppercase tracking-[0.3em] text-accent">
+            Hotel Facilities
+          </p>
+          <h2 class="mt-4 font-bold font-display text-primary text-4xl">
+            Across the property
+          </h2>
+          <ul class="mt-8 grid grid-cols-1 gap-4 text-sm sm:grid-cols-2">
+            <li class="flex items-center gap-2">
+              <span class="h-1 w-1 rounded-full bg-accent"></span> 24-hour reception
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="h-1 w-1 rounded-full bg-accent"></span> Fitness center
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="h-1 w-1 rounded-full bg-accent"></span> Free parking
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="h-1 w-1 rounded-full bg-accent"></span> Library
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="h-1 w-1 rounded-full bg-accent"></span> Non-smoking rooms
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="h-1 w-1 rounded-full bg-accent"></span> Outdoor swimming
+              pool
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="h-1 w-1 rounded-full bg-accent"></span> Wi-Fi access
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</BaseLayout>

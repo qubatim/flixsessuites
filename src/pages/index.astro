@@ -1,0 +1,222 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import { baseJsonLd } from "../lib/seo";
+---
+
+<BaseLayout
+  title="Flixses Suites | Luxury Stay in Kuala Lumpur"
+  description="Experience elegant city living at Flixses Suites in Kuala Lumpur. Discover calm, modern, and spacious premium suites with breathtaking views."
+  path="/"
+  jsonLd={baseJsonLd}
+>
+  <Header />
+  <main>
+    <!-- Hero Section -->
+    <section
+      class="relative isolate flex min-h-[90vh] flex-col justify-center bg-background px-5 py-24 md:px-8"
+    >
+      <div class="absolute inset-0 z-0">
+        <img
+          src="/images/Flixesuite-160.jpg"
+          alt="Flixses Suites rooftop view"
+          class="h-full w-full object-cover"
+          loading="eager"
+        />
+        <div class="absolute inset-0 bg-primary/45"></div>
+      </div>
+      <div class="relative z-10 mx-auto w-full max-w-[1280px]">
+        <div class="max-w-3xl text-white">
+          <p
+            class="hero-fade mb-6 text-xs uppercase tracking-[0.35em] text-accent-soft"
+          >
+            Kuala Lumpur, Malaysia
+          </p>
+          <h1
+            class="hero-fade hero-fade-delay font-display text-5xl leading-tight md:text-7xl lg:text-[80px]"
+          >
+            Quiet Elegance<br />
+            in the City Center
+          </h1>
+          <p
+            class="hero-fade hero-fade-delay-2 mt-8 max-w-xl text-base text-white/90 md:text-lg"
+          >
+            A curated collection of luxury suites designed for the modern
+            traveler seeking comfort and privacy.
+          </p>
+          <div class="hero-fade hero-fade-delay-2 mt-12 flex flex-wrap gap-5">
+            <a
+              href="/suites"
+              class="rounded-md border border-secondary bg-secondary px-8 py-3.5 text-sm font-medium tracking-wide text-white transition hover:bg-accent hover:border-accent"
+            >
+              Explore Suites
+            </a>
+            <a
+              href="/contact"
+              class="rounded-md border border-white bg-transparent px-8 py-3.5 text-sm font-medium tracking-wide text-white transition hover:bg-white hover:text-primary"
+            >
+              Book Your Stay
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Brand Story Phase -->
+    <section class="bg-background py-24 md:py-32">
+      <div class="mx-auto max-w-[1280px] px-5 md:px-8">
+        <div class="grid items-center gap-16 lg:grid-cols-2">
+          <div class="reveal">
+            <p class="text-sm uppercase tracking-[0.2em] text-secondary">
+              About Flixses Suites
+            </p>
+            <h2
+              class="mt-4 font-display text-primary text-4xl leading-tight md:text-5xl lg:text-6xl"
+            >
+              A refined retreat<br />in the heart of the city
+            </h2>
+            <p class="mt-8 leading-relaxed">
+              Flixses Suites offers a contemporary luxury stay near the iconic
+              Petronas Twin Towers. We emphasize high-quality materials, calm
+              aesthetics, and generous spatial planning to ensure an elevated
+              stay.
+            </p>
+            <a
+              href="/contact"
+              class="mt-10 inline-block border-b border-primary pb-1 font-medium text-primary transition hover:text-accent hover:border-accent"
+            >
+              Discover our philosophy
+            </a>
+          </div>
+          <div class="grid gap-6 sm:grid-cols-2">
+            <div
+              class="reveal rounded-md border border-border bg-background p-10 text-center shadow-sm"
+            >
+              <p class="font-display text-5xl text-accent">9.1/10</p>
+              <p
+                class="mt-4 text-xs font-medium uppercase tracking-widest text-primary"
+              >
+                Guest Rating
+              </p>
+            </div>
+            <div
+              class="reveal rounded-md border border-border bg-background p-10 text-center shadow-sm"
+            >
+              <p class="font-display text-5xl text-accent">24/7</p>
+              <p
+                class="mt-4 text-xs font-medium uppercase tracking-widest text-primary"
+              >
+                Concierge Service
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Suites Preview -->
+    <section class="bg-background-alt py-24 md:py-32">
+      <div class="mx-auto max-w-[1280px] px-5 md:px-8">
+        <div
+          class="reveal mb-16 flex flex-col items-start justify-between gap-6 md:flex-row md:items-end"
+        >
+          <div class="max-w-xl">
+            <h2
+              class="font-display text-primary text-4xl leading-tight md:text-5xl lg:text-6xl"
+            >
+              Our Suites
+            </h2>
+            <p class="mt-6">
+              Spacious living areas, refined furnishings, and extraordinary
+              views. Discover the perfect sanctuary.
+            </p>
+          </div>
+          <a
+            href="/suites"
+            class="inline-block border-b border-primary pb-1 font-medium text-primary transition hover:text-accent hover:border-accent"
+          >
+            View all suites
+          </a>
+        </div>
+
+        <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+          <!-- Suite Card -->
+          <a
+            href="/suites"
+            class="group reveal flex flex-col rounded-md bg-background p-6 border border-border transition-all hover:shadow-lg"
+          >
+            <div
+              class="aspect-[4/3] w-full overflow-hidden rounded-[8px] bg-border"
+            >
+              <img
+                src="/images/Flixesuite-160.jpg"
+                alt="Executive Suite"
+                class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                loading="lazy"
+              />
+            </div>
+            <h3
+              class="mt-6 font-display font-bold text-2xl text-primary group-hover:text-accent transition-colors"
+            >
+              Executive Suite
+            </h3>
+            <p class="mt-3">
+              Ideal for business travelers requiring space to work and unwind.
+            </p>
+          </a>
+          <!-- Suite Card 2 -->
+          <a
+            href="/suites"
+            class="group reveal flex flex-col rounded-md bg-background p-6 border border-border transition-all hover:shadow-lg [transition-delay:100ms]"
+          >
+            <div
+              class="aspect-[4/3] w-full overflow-hidden rounded-[8px] bg-border"
+            >
+              <img
+                src="/images/Flixesuite-160.jpg"
+                alt="Deluxe Suite"
+                class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                loading="lazy"
+              />
+            </div>
+            <h3
+              class="mt-6 font-display font-bold text-2xl text-primary group-hover:text-accent transition-colors"
+            >
+              Deluxe Suite
+            </h3>
+            <p class="mt-3">
+              A premium space featuring breathtaking views of the city skyline.
+            </p>
+          </a>
+          <!-- Suite Card 3 -->
+          <a
+            href="/suites"
+            class="group reveal flex h-full flex-col rounded-md bg-background p-6 border border-border transition-all hover:shadow-lg [transition-delay:200ms]"
+          >
+            <div
+              class="aspect-[4/3] w-full overflow-hidden rounded-[8px] bg-border"
+            >
+              <img
+                src="/images/Flixesuite-160.jpg"
+                alt="Grand Suite"
+                class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                loading="lazy"
+              />
+            </div>
+            <h3
+              class="mt-6 font-display font-bold text-2xl text-primary group-hover:text-accent transition-colors"
+            >
+              Grand Suite
+            </h3>
+            <p class="mt-3">
+              The ultimate expression of luxury, designed for prolonged stays
+              and elegant living.
+            </p>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</BaseLayout>

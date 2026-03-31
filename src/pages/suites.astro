@@ -1,0 +1,66 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import PageHero from "../components/PageHero.astro";
+import { baseJsonLd, breadcrumbJsonLd } from "../lib/seo";
+import { suites } from "../lib/suites";
+
+const jsonLd = [
+  ...baseJsonLd,
+  breadcrumbJsonLd([
+    { name: "Home", url: "https://flixsessuites.com/" },
+    { name: "Suites", url: "https://flixsessuites.com/suites" },
+  ]),
+];
+---
+
+<BaseLayout
+  title="Suites & Apartments | Flixes Suites"
+  description="Discover spacious one to three-bedroom luxury suites and apartments near KLCC with premium in-room amenities."
+  path="/suites"
+  jsonLd={jsonLd}
+>
+  <Header />
+  <main>
+    <PageHero
+      title="Signature suites and apartments"
+      subtitle="Choose from spacious residences designed with modern comforts and elegant layouts."
+      image="/images/Flixesuite-112.jpg"
+    />
+    <section class="mx-auto max-w-[1280px] px-5 py-24 md:px-8">
+      <div class="grid gap-10 md:grid-cols-2 xl:grid-cols-3">
+        {
+          suites.map((suite) => (
+            <article class="reveal overflow-hidden rounded-md border border-border bg-background shadow-sm transition hover:shadow-soft">
+              <img
+                src={suite.image}
+                alt={suite.title}
+                class="h-64 w-full object-cover"
+                loading="lazy"
+              />
+              <div class="p-8">
+                <h2 class="font-display font-bold text-primary text-3xl">
+                  {suite.title}
+                </h2>
+                <p class="mt-2 text-xs uppercase tracking-widest text-accent">
+                  {suite.meta}
+                </p>
+                <p class="mt-5 text-sm leading-relaxed">{suite.description}</p>
+                <ul class="mt-6 flex flex-col gap-2 border-t border-border pt-6 text-sm">
+                  {suite.details.map((item) => (
+                    <li class="flex items-center gap-2">
+                      <span class="h-1 w-1 rounded-full bg-accent" />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </article>
+          ))
+        }
+      </div>
+    </section>
+  </main>
+  <Footer />
+</BaseLayout>

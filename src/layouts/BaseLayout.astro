@@ -1,0 +1,95 @@
+---
+import "../styles/global.css";
+import FloatingWhatsApp from "../components/FloatingWhatsApp.astro";
+
+interface Props {
+  title: string;
+  description: string;
+  path?: string;
+  image?: string;
+  type?: "website" | "article";
+  jsonLd?: Record<string, unknown>[];
+}
+
+const {
+  title,
+  description,
+  path = "/",
+  image = "/images/Flixesuite-160.jpg",
+  type = "website",
+  jsonLd = [],
+} = Astro.props;
+
+const canonical = new URL(path, Astro.site).toString();
+const ogImage = new URL(image, Astro.site).toString();
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <!-- Standard favicon for most browsers -->
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <!-- For modern browsers, use PNG or SVG -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32" />
+    <!-- Apple Touch Icon (for iOS home screen) -->
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180" />
+    <!-- Web App Manifest (for Android PWA support) -->
+    <link rel="manifest" href="/site.webmanifest" />
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <meta property="og:type" content={type} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={ogImage} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    {
+      jsonLd.map((entry) => (
+        <script type="application/ld+json" set:html={JSON.stringify(entry)} />
+      ))
+    }
+  </head>
+  <body class="antialiased text-slate-500 text-base">
+    <slot />
+    <FloatingWhatsApp />
+    <script>
+      const prefersReduced = window.matchMedia(
+        "(prefers-reduced-motion: reduce)",
+      ).matches;
+      if (!prefersReduced) {
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("is-visible");
+                observer.unobserve(entry.target);
+              }
+            });
+          },
+          { threshold: 0.18 },
+        );
+
+        document
+          .querySelectorAll(".reveal")
+          .forEach((node) => observer.observe(node));
+      } else {
+        document
+          .querySelectorAll(".reveal")
+          .forEach((node) => node.classList.add("is-visible"));
+      }
+    </script>
+  </body>
+</html>

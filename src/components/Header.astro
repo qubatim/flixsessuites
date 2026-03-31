@@ -1,0 +1,42 @@
+---
+const links = [
+  { href: "/", label: "Home" },
+  { href: "/suites", label: "Suites" },
+  { href: "/facilities", label: "Facilities" },
+  { href: "/gallery", label: "Gallery" },
+  { href: "/contact", label: "Contact" },
+  { href: "/blog", label: "Blog" },
+];
+---
+
+<header
+  class="sticky top-0 z-50 border-b border-border bg-background/95 backdrop-blur"
+>
+  <nav
+    class="mx-auto flex max-w-[1280px] items-center justify-between px-5 py-4 md:px-8"
+  >
+    <a href="/" class="block">
+      <img src="/logo.svg" alt="Flixses Suites Logo" class="h-auto w-[140px]" />
+    </a>
+    <ul class="hidden items-center gap-6 text-primary md:flex">
+      {
+        links.map((link) => (
+          <li>
+            <a href={link.href} class="transition hover:text-accent">
+              {link.label}
+            </a>
+          </li>
+        ))
+      }
+
+      <li>
+        <a
+          href="/contact"
+          class="rounded-md border border-secondary bg-secondary px-5 py-2.5 font-medium text-white transition hover:bg-primary hover:border-primary"
+        >
+          Book Your Stay
+        </a>
+      </li>
+    </ul>
+  </nav>
+</header>

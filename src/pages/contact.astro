@@ -1,0 +1,97 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import PageHero from "../components/PageHero.astro";
+import { baseJsonLd, breadcrumbJsonLd } from "../lib/seo";
+
+const jsonLd = [
+  ...baseJsonLd,
+  breadcrumbJsonLd([
+    { name: "Home", url: "https://flixsessuites.com/" },
+    { name: "Contact", url: "https://flixsessuites.com/contact" },
+  ]),
+];
+---
+
+<BaseLayout
+  title="Contact & Booking | Flixes Suites"
+  description="Plan your Kuala Lumpur stay at Flixes Suites. Contact our team for reservations and concierge support."
+  path="/contact"
+  jsonLd={jsonLd}
+>
+  <Header />
+  <main>
+    <PageHero
+      title="Your stay starts here"
+      subtitle="Reach out to plan your next stay near KLCC and enjoy elevated city living."
+      image="/images/Platinium-69.jpg"
+    />
+    <section class="mx-auto max-w-[1280px] px-5 py-24 md:px-8">
+      <div
+        class="reveal rounded-md border border-border bg-background px-8 py-16 shadow-soft md:px-16 md:py-24 text-center md:text-left flex flex-col md:flex-row md:items-center justify-between gap-12"
+      >
+        <div class="max-w-2xl">
+          <p class="text-xs uppercase tracking-[0.3em] text-accent">
+            Reserve Your Experience
+          </p>
+          <h2
+            class="mt-4 font-display text-primary text-4xl leading-tight md:text-5xl lg:text-6xl"
+          >
+            Connect with our<br />concierge team
+          </h2>
+          <p class="mt-6 text-lg leading-relaxed">
+            Flixses Suites combines location, comfort, and modern luxury for
+            business travelers, couples, families, and groups.
+          </p>
+        </div>
+        <div class="flex flex-col gap-4 min-w-[200px]">
+          <a
+            href="#"
+            class="rounded-md border border-primary bg-primary px-8 py-4 text-center text-sm font-medium tracking-wide text-background transition hover:bg-accent hover:border-accent hover:text-white"
+            >Book Now</a
+          >
+          <a
+            href="#"
+            class="rounded-md border border-primary bg-transparent px-8 py-4 text-center text-sm font-medium tracking-wide text-primary transition hover:bg-primary hover:text-background"
+            >Contact Concierge</a
+          >
+        </div>
+      </div>
+
+      <div class="mt-16 grid gap-8 md:grid-cols-3 reveal">
+        <div
+          class="rounded-md border border-border bg-background p-8 text-center shadow-sm"
+        >
+          <h3 class="font-display text-2xl text-primary">Location</h3>
+          <p class="mt-4 text-sm text-secondary leading-relaxed">
+            Kuala Lumpur<br />Malaysia
+          </p>
+        </div>
+        <div
+          class="rounded-md border border-border bg-background p-8 text-center shadow-sm"
+        >
+          <h3 class="font-display text-2xl text-primary">Contact</h3>
+          <p class="mt-4 text-sm text-secondary leading-relaxed">
+            <a
+              href="mailto:info@flixsessuites.com"
+              class="hover:text-accent transition">info@flixsessuites.com</a
+            ><br /><a
+              href="tel:+6012345678"
+              class="hover:text-accent transition">+60 12 345 678</a
+            >
+          </p>
+        </div>
+        <div
+          class="rounded-md border border-border bg-background p-8 text-center shadow-sm"
+        >
+          <h3 class="font-display text-2xl text-primary">Check-in</h3>
+          <p class="mt-4 text-sm text-secondary leading-relaxed">
+            Check-in: 3:00 PM<br />Check-out: 12:00 PM
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</BaseLayout>
