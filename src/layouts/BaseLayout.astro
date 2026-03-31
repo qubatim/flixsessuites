@@ -56,6 +56,10 @@ const ogImage = new URL(image, Astro.site).toString();
       href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
+    <script src="https://unpkg.com/alpinejs" defer></script>
+    <style is:global>
+      [x-cloak] { display: none !important; }
+    </style>
     {
       jsonLd.map((entry) => (
         <script type="application/ld+json" set:html={JSON.stringify(entry)} />

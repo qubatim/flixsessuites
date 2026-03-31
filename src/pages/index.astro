@@ -3,6 +3,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import { baseJsonLd } from "../lib/seo";
+import { Icon } from "astro-icon/components";
 ---
 
 <BaseLayout
@@ -48,15 +49,17 @@ import { baseJsonLd } from "../lib/seo";
           <div class="hero-fade hero-fade-delay-2 mt-12 flex flex-wrap gap-5">
             <a
               href="/suites"
-              class="rounded-md border border-secondary bg-secondary px-8 py-3.5 text-sm font-medium tracking-wide text-white transition hover:bg-accent hover:border-accent"
+              class="flex items-center gap-2 rounded-md border border-secondary bg-secondary px-8 py-3.5 text-sm font-medium tracking-wide text-white transition hover:bg-accent hover:border-accent"
             >
               Explore Suites
+              <Icon name="hugeicons:arrow-right-01" class="text-lg" />
             </a>
             <a
               href="/contact"
-              class="rounded-md border border-white bg-transparent px-8 py-3.5 text-sm font-medium tracking-wide text-white transition hover:bg-white hover:text-primary"
+              class="flex items-center gap-2 rounded-md border border-white bg-transparent px-8 py-3.5 text-sm font-medium tracking-wide text-white transition hover:bg-white hover:text-primary"
             >
               Book Your Stay
+              <Icon name="hugeicons:calendar-add-01" class="text-lg" />
             </a>
           </div>
         </div>
@@ -84,15 +87,17 @@ import { baseJsonLd } from "../lib/seo";
             </p>
             <a
               href="/contact"
-              class="mt-10 inline-block border-b border-primary pb-1 font-medium text-primary transition hover:text-accent hover:border-accent"
+              class="mt-10 inline-flex items-center gap-2 border-b border-primary pb-1 font-medium text-primary transition hover:text-accent hover:border-accent"
             >
               Discover our philosophy
+              <Icon name="hugeicons:arrow-right-01" class="text-lg" />
             </a>
           </div>
           <div class="grid gap-6 sm:grid-cols-2">
             <div
-              class="reveal rounded-md border border-border bg-background p-10 text-center shadow-sm"
+              class="reveal flex flex-col items-center justify-center rounded-md border border-border bg-background p-10 text-center shadow-sm"
             >
+              <Icon name="hugeicons:star" class="mb-4 text-4xl text-accent" />
               <p class="font-display text-5xl text-accent">9.1/10</p>
               <p
                 class="mt-4 text-xs font-medium uppercase tracking-widest text-primary"
@@ -101,8 +106,12 @@ import { baseJsonLd } from "../lib/seo";
               </p>
             </div>
             <div
-              class="reveal rounded-md border border-border bg-background p-10 text-center shadow-sm"
+              class="reveal flex flex-col items-center justify-center rounded-md border border-border bg-background p-10 text-center shadow-sm"
             >
+              <Icon
+                name="hugeicons:clock-01"
+                class="mb-4 text-4xl text-accent"
+              />
               <p class="font-display text-5xl text-accent">24/7</p>
               <p
                 class="mt-4 text-xs font-medium uppercase tracking-widest text-primary"
@@ -134,9 +143,10 @@ import { baseJsonLd } from "../lib/seo";
           </div>
           <a
             href="/suites"
-            class="inline-block border-b border-primary pb-1 font-medium text-primary transition hover:text-accent hover:border-accent"
+            class="inline-flex items-center gap-2 border-b border-primary pb-1 font-medium text-primary transition hover:text-accent hover:border-accent"
           >
             View all suites
+            <Icon name="hugeicons:arrow-right-01" class="text-lg" />
           </a>
         </div>
 

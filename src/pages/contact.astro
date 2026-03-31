@@ -4,6 +4,7 @@ import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import PageHero from "../components/PageHero.astro";
 import { baseJsonLd, breadcrumbJsonLd } from "../lib/seo";
+import { Icon } from "astro-icon/components";
 
 const jsonLd = [
   ...baseJsonLd,
@@ -48,29 +49,39 @@ const jsonLd = [
         <div class="flex flex-col gap-4 min-w-[200px]">
           <a
             href="#"
-            class="rounded-md border border-primary bg-primary px-8 py-4 text-center text-sm font-medium tracking-wide text-background transition hover:bg-accent hover:border-accent hover:text-white"
-            >Book Now</a
+            class="flex items-center justify-center gap-2 rounded-md border border-primary bg-primary px-8 py-4 text-center text-sm font-medium tracking-wide text-background transition hover:bg-accent hover:border-accent hover:text-white"
           >
+            Book Now <Icon name="hugeicons:calendar-add-01" class="text-lg" />
+          </a>
           <a
             href="#"
-            class="rounded-md border border-primary bg-transparent px-8 py-4 text-center text-sm font-medium tracking-wide text-primary transition hover:bg-primary hover:text-background"
-            >Contact Concierge</a
+            class="flex items-center justify-center gap-2 rounded-md border border-primary bg-transparent px-8 py-4 text-center text-sm font-medium tracking-wide text-primary transition hover:bg-primary hover:text-background"
           >
+            Contact Concierge <Icon
+              name="hugeicons:customer-support"
+              class="text-lg"
+            />
+          </a>
         </div>
       </div>
 
       <div class="mt-16 grid gap-8 md:grid-cols-3 reveal">
         <div
-          class="rounded-md border border-border bg-background p-8 text-center shadow-sm"
+          class="flex flex-col items-center justify-center rounded-md border border-border bg-background p-8 text-center shadow-sm"
         >
+          <Icon
+            name="hugeicons:location-01"
+            class="mb-4 text-4xl text-accent"
+          />
           <h3 class="font-display text-2xl text-primary">Location</h3>
           <p class="mt-4 text-sm text-secondary leading-relaxed">
             Kuala Lumpur<br />Malaysia
           </p>
         </div>
         <div
-          class="rounded-md border border-border bg-background p-8 text-center shadow-sm"
+          class="flex flex-col items-center justify-center rounded-md border border-border bg-background p-8 text-center shadow-sm"
         >
+          <Icon name="hugeicons:mail-01" class="mb-4 text-4xl text-accent" />
           <h3 class="font-display text-2xl text-primary">Contact</h3>
           <p class="mt-4 text-sm text-secondary leading-relaxed">
             <a
@@ -83,8 +94,9 @@ const jsonLd = [
           </p>
         </div>
         <div
-          class="rounded-md border border-border bg-background p-8 text-center shadow-sm"
+          class="flex flex-col items-center justify-center rounded-md border border-border bg-background p-8 text-center shadow-sm"
         >
+          <Icon name="hugeicons:clock-01" class="mb-4 text-4xl text-accent" />
           <h3 class="font-display text-2xl text-primary">Check-in</h3>
           <p class="mt-4 text-sm text-secondary leading-relaxed">
             Check-in: 3:00 PM<br />Check-out: 12:00 PM

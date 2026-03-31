@@ -5,6 +5,7 @@ import Footer from "../components/Footer.astro";
 import PageHero from "../components/PageHero.astro";
 import { baseJsonLd, breadcrumbJsonLd } from "../lib/seo";
 import { suites } from "../lib/suites";
+import { Icon } from "astro-icon/components";
 
 const jsonLd = [
   ...baseJsonLd,
@@ -47,11 +48,11 @@ const jsonLd = [
                   {suite.meta}
                 </p>
                 <p class="mt-5 text-sm leading-relaxed">{suite.description}</p>
-                <ul class="mt-6 flex flex-col gap-2 border-t border-border pt-6 text-sm">
+                <ul class="mt-6 flex flex-col gap-3 border-t border-border pt-6 text-sm">
                   {suite.details.map((item) => (
-                    <li class="flex items-center gap-2">
-                      <span class="h-1 w-1 rounded-full bg-accent" />
-                      {item}
+                    <li class="flex items-start gap-3 text-slate-600">
+                      <Icon name="hugeicons:tick-02" class="text-accent text-lg shrink-0 mt-0.5" />
+                      <span class="leading-relaxed">{item}</span>
                     </li>
                   ))}
                 </ul>

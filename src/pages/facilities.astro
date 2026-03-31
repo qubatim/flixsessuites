@@ -4,6 +4,7 @@ import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import PageHero from "../components/PageHero.astro";
 import { baseJsonLd, breadcrumbJsonLd } from "../lib/seo";
+import { Icon } from "astro-icon/components";
 
 const jsonLd = [
   ...baseJsonLd,
@@ -39,36 +40,50 @@ const jsonLd = [
             Comfort & convenience
           </h2>
           <ul class="mt-8 grid grid-cols-1 gap-4 text-sm sm:grid-cols-2">
-            <li class="flex items-center gap-2">
-              <span class="h-1 w-1 rounded-full bg-accent"></span> Washing machine
+            <li class="flex items-center gap-3">
+              <Icon
+                name="hugeicons:washing-machine"
+                class="text-secondary text-2xl"
+              /> Washing machine
             </li>
-            <li class="flex items-center gap-2">
-              <span class="h-1 w-1 rounded-full bg-accent"></span> Iron
+            <li class="flex items-center gap-3">
+              <Icon name="hugeicons:t-shirt" class="text-secondary text-2xl" /> Iron
             </li>
-            <li class="flex items-center gap-2">
-              <span class="h-1 w-1 rounded-full bg-accent"></span> Refrigerator
+            <li class="flex items-center gap-3">
+              <Icon name="hugeicons:fridge" class="text-secondary text-2xl" /> Refrigerator
             </li>
-            <li class="flex items-center gap-2">
-              <span class="h-1 w-1 rounded-full bg-accent"></span> Complimentary Wi-Fi
+            <li class="flex items-center gap-3">
+              <Icon name="hugeicons:wifi-01" class="text-secondary text-2xl" /> Complimentary
+              Wi-Fi
             </li>
-            <li class="flex items-center gap-2">
-              <span class="h-1 w-1 rounded-full bg-accent"></span> Hair dryer
+            <li class="flex items-center gap-3">
+              <Icon
+                name="hugeicons:hair-dryer"
+                class="text-secondary text-2xl"
+              /> Hair dryer
             </li>
-            <li class="flex items-center gap-2">
-              <span class="h-1 w-1 rounded-full bg-accent"></span> Housekeeping
+            <li class="flex items-center gap-3">
+              <Icon name="hugeicons:clean" class="text-secondary text-2xl" /> Housekeeping
             </li>
-            <li class="flex items-center gap-2">
-              <span class="h-1 w-1 rounded-full bg-accent"></span> Air conditioning
+            <li class="flex items-center gap-3">
+              <Icon
+                name="hugeicons:fast-wind"
+                class="text-secondary text-2xl"
+              /> Air conditioning
             </li>
-            <li class="flex items-center gap-2">
-              <span class="h-1 w-1 rounded-full bg-accent"></span> Heating
+            <li class="flex items-center gap-3">
+              <Icon
+                name="hugeicons:thermometer"
+                class="text-secondary text-2xl"
+              /> Heating
             </li>
-            <li class="flex items-center gap-2">
-              <span class="h-1 w-1 rounded-full bg-accent"></span> Electric kettle
+            <li class="flex items-center gap-3">
+              <Icon name="hugeicons:kettle" class="text-secondary text-2xl" /> Electric
+              kettle
             </li>
-            <li class="flex items-center gap-2">
-              <span class="h-1 w-1 rounded-full bg-accent"></span> Satellite flat-screen
-              TV
+            <li class="flex items-center gap-3">
+              <Icon name="hugeicons:tv-01" class="text-secondary text-2xl" /> Satellite
+              flat-screen TV
             </li>
           </ul>
         </div>
@@ -82,27 +97,36 @@ const jsonLd = [
             Across the property
           </h2>
           <ul class="mt-8 grid grid-cols-1 gap-4 text-sm sm:grid-cols-2">
-            <li class="flex items-center gap-2">
-              <span class="h-1 w-1 rounded-full bg-accent"></span> 24-hour reception
+            <li class="flex items-center gap-3">
+              <Icon name="hugeicons:question" class="text-secondary text-2xl" /> 24-hour
+              reception
             </li>
-            <li class="flex items-center gap-2">
-              <span class="h-1 w-1 rounded-full bg-accent"></span> Fitness center
+            <li class="flex items-center gap-3">
+              <Icon
+                name="hugeicons:treadmill-01"
+                class="text-secondary text-2xl"
+              /> Fitness center
             </li>
-            <li class="flex items-center gap-2">
-              <span class="h-1 w-1 rounded-full bg-accent"></span> Free parking
+            <li class="flex items-center gap-3">
+              <Icon
+                name="hugeicons:parking-area-square"
+                class="text-secondary text-2xl"
+              /> Free parking
             </li>
-            <li class="flex items-center gap-2">
-              <span class="h-1 w-1 rounded-full bg-accent"></span> Library
+            <li class="flex items-center gap-3">
+              <Icon name="hugeicons:library" class="text-secondary text-2xl" /> Library
             </li>
-            <li class="flex items-center gap-2">
-              <span class="h-1 w-1 rounded-full bg-accent"></span> Non-smoking rooms
+            <li class="flex items-center gap-3">
+              <Icon name="hugeicons:alert-01" class="text-secondary text-2xl" /> Non-smoking
+              rooms
             </li>
-            <li class="flex items-center gap-2">
-              <span class="h-1 w-1 rounded-full bg-accent"></span> Outdoor swimming
-              pool
+            <li class="flex items-center gap-3">
+              <Icon name="hugeicons:pool" class="text-secondary text-2xl" /> Outdoor
+              swimming pool
             </li>
-            <li class="flex items-center gap-2">
-              <span class="h-1 w-1 rounded-full bg-accent"></span> Wi-Fi access
+            <li class="flex items-center gap-3">
+              <Icon name="hugeicons:wifi-01" class="text-secondary text-2xl" /> Wi-Fi
+              access
             </li>
           </ul>
         </div>
